@@ -2,7 +2,7 @@
   "name": "serverless-firebase",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently -n 'proxy,firebase' 'node proxy.js' 'firebase serve --only functions'",
+    "start": "firebase serve --only functions",
     "build": "next build",
     "deploy": "firebase deploy"
   },
@@ -12,9 +12,5 @@
     "next": "^2.4.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
-  },
-  "devDependencies": {
-    "concurrently": "^3.5.0",
-    "http-proxy": "^1.16.2"
   }
 }
