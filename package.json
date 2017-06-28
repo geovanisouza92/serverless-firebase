@@ -2,8 +2,10 @@
   "name": "serverless-firebase",
   "version": "1.0.0",
   "scripts": {
-    "start": "firebase serve --only functions",
+    "start": "firebase serve",
+    "prebuild": "rimraf \"functions/next\"",
     "build": "next build",
+    "predeploy": "yarn build && cd \"functions\" && yarn",
     "deploy": "firebase deploy"
   },
   "license": "MIT",
@@ -12,5 +14,8 @@
     "next": "^2.4.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.1"
   }
 }
