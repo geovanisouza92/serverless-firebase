@@ -2,9 +2,15 @@
   "name": "serverless-firebase",
   "version": "1.0.0",
   "scripts": {
-    "start": "firebase serve --only functions",
-    "build": "next build",
-    "deploy": "firebase deploy"
+    "install": "yarn build-all",
+    "dev": "yarn build-firebase && yarn && yarn next",
+    "preserve": "yarn build-all",
+    "serve": "firebase serve",
+    "predeploy": "yarn build-all",
+    "deploy": "firebase deploy",
+    "build-all": "yarn build-next && yarn build-firebase",
+    "build-next": "next build",
+    "build-firebase": "cd \"functions\" && yarn"
   },
   "license": "MIT",
   "dependencies": {
